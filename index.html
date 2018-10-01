@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자판기</title>
+	<style>
+		body {background:#0A143C}
+
+		#vendingDiv {width:1000px; margin:auto; text-align:center;}
+		#vendingMachine {width:500px; margin:auto; margin-top:100px; text-align:center;}
+
+		#coinDiv {width:1000px; margin:auto; text-align:center;}
+    	#coinPika{width:100px; margin:auto; padding-top:50px;
+
+						animation:myMove 2s linear infinite;
+		}
+
+		@keyframes myMove {
+    		from {}
+ 			to {transform: rotateY(360deg);
+ 				/*rotate3d(x,y,z,angle)*/}
+			}
+		body{perspective:10000px}
+		
+		#coinDonut{width:100px; margin:auto; padding-top:50px}
+		#coinColor{width:150px; margin:auto; padding-top:50px}
+		#coinLast{width:100px; margin:auto; padding-top:50px}
+
+		#juice0 {width:200px; position:absolute; left:50%; top:100px}
+
+		#catDiv {width:1000px; margin:auto; padding-top:50px; text-align:center;}
+		#cat {
+			width:100px;
+			animation: myANI 4s linear infinite 
+			;
+			}
+
+		@keyframes myANI {
+    		from {margin-left: -1000px;}
+ 			to {margin-left: 1000px;}
+			}
+
+		div:hover {
+    	animation-play-state: paused;}
+
+
+
+	</style>
+</head>
+<body>
+	<div id="vendingDiv">
+		<img src="img/vending1.png" id="vendingMachine">
+		<img src="img/juice0.png" id="juice0">
+	</div>
+
+
+	<div id="coinDiv">
+		<img src="img/coinPika.png" id="coinPika">
+		<img src="img/coinDonut.gif" id="coinDonut">
+		<img src="img/coinColor.gif" id="coinColor">
+		<img src="img/coinLast.gif" id="coinLast">
+
+	</div>
+
+
+	<div>
+		<audio id=coinSound>
+			<source src="img/coinSound.mp3" type="audio/mpeg">
+		</audio>
+		<audio id=waterCanSound>
+			<source src="waterCanFall.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+
+	
+
+	<div id="catDiv">
+		<img src="img/coincat.gif" id="cat">
+	</div>
+
+
+	<script type="text/javascript">
+
+		var toggle1 = "off";
+		coinPika.onclick = function(){
+			if(toggle1=="off")
+			{juice0.setAttribute("src","img/pika.gif");
+				toggle1="on";
+				coinSound.play();
+			}
+			else
+			{juice0.setAttribute("src","img/juice0.png");
+				toggle1="off"
+			}
+		}
+
+		var toggle2 = "off";
+		coinDonut.onclick = function(){
+			if(toggle2=="off")
+			{juice0.setAttribute("src","img/donut.gif");
+				toggle2="on";
+				coinSound.play();
+			}
+			else
+			{juice0.setAttribute("src","img/juice0.png");
+				toggle2="off"
+			}
+		}
+
+		var toggle3 = "off";
+		coinColor.onclick = function(){
+			if(toggle3=="off")
+			{juice0.setAttribute("src","img/color.gif");
+				toggle3="on";
+				coinSound.play();
+			}
+			else
+			{juice0.setAttribute("src","img/juice0.png");
+				toggle3="off"
+			}
+		}
+
+		var toggle4 = "off";
+		coinLast.onclick = function(){
+			if(toggle4=="off")
+			{juice0.setAttribute("src","img/last.gif");
+				toggle4="on";
+				coinSound.play();
+			}
+			else
+			{juice0.setAttribute("src","img/juice0.png");
+				toggle4="off"
+			}
+		}
+
+
+
+
+	</script>
+
+</body>
+</html>
